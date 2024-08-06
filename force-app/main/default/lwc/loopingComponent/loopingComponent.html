@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="for each loop">
+        <div class="slds-var-m-around_x-small">
+            <template for:each={carList} for:item="car">
+                <div key={car}>{car}</div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="for each loop with array of objects">
+        <div class="slds-var-m-around_x-small">
+            <template for:each={friendsList} for:item="friends">
+                <div key={friends.id}>{friends.name} {friends.company}</div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Iterator loop">
+        <div class="slds-var-m-around_x-small">
+            <template iterator:friend={friendsList}>
+                <div key={friend.value.id}>
+                    <ul class="slds-has-dividers_around">
+                        <template if:true={friend.first}>
+                            <div class="slds-box slds-theme_shade"><strong>List of Friends and there company</strong></div>
+                        </template>
+                        <li class="slds-item">
+                            <strong>{friend.value.name}               </strong>
+                            {friend.value.company}
+                        </li>
+                        <template if:true={friend.last}>
+                            <div class="slds-box slds-theme_shade"><strong>Thanks for reading the list</strong></div>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

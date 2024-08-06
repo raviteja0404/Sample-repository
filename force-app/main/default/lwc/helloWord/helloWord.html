@@ -1,0 +1,11 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Two way data binding">
+    <div class="slds-m-around_x-small">
+    <lightning-input type="text" label="Enter course name" onkeyup={changeHandler}></lightning-input>
+    <div>{fullname} is a course in {title}</div>
+    <lightning-input type="text" label="Enter city name" onkeyup={trackHandler}></lightning-input>
+    <div>{address.city} is a my Hometown</div>
+    </div>
+    </lightning-card>
+</template>

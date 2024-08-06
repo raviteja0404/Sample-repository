@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+
+   <style>
+p{
+    color: Green;
+}
+
+
+   </style>
+</head>
+<body> <p> Thanks for choosing LWC </p><div id="parentid">Hello Parent component</div></body>
+<script>
+
+    const ele = document.querySelector('#parentid');
+    const shadowRoot = ele.attachShadow({mode:"open"});
+    shadowRoot.innerHTML = '<p>Child paragraph is added<p>';
+
+</script>
+</html>

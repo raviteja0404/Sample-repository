@@ -1,0 +1,32 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card>
+        <div class="slds-var-m-around_x-small">
+            <template if:true={isSubmitted}>
+                <div>You have selected {correctAnswers} out of {myQuestions.length}</div>
+            </template>
+            <form>
+            <template for:each={myQuestions} for:item="item">
+                <div key={item.id} class="slds-var-m-around-medium slds-var-p-around-medium"><strong>{item.id}  -  {item.question}</strong>
+                    <div class="slds-grid slds-gutters slds-var-m-around-large slds-var-p-around-medium">
+                        <div class="slds-col">
+                        <input type="radio" name={item.id} value="a" onchange={changeHandler}/>
+                        <span>{item.answers.a}</span>
+                        </div>
+                        <div class="slds-col">
+                        <input type="radio" name={item.id} value="b" onchange={changeHandler}/>
+                        <span>{item.answers.b}</span>
+                        </div>
+                        <div class="slds-col">
+                        <input type="radio" name={item.id} value="c" onchange={changeHandler}/>
+                        <span>{item.answers.c}</span>
+                        </div>
+                      </div>              
+                </div>
+            </template>
+            <lightning-button variant='brand' type="submit" label="Submit" title="Submit Quiz" class="slds-var-m-around_small" onchange={submitHandler}></lightning-button>
+            <lightning-button variant='brand' type="reset" label="Reset" title="Reset Quiz" class="slds-var-m-around_small" onchange={resetHandler}></lightning-button>
+            </form>
+        </div>
+    </lightning-card>
+</template>
