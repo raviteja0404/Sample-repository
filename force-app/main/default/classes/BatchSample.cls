@@ -14,7 +14,7 @@ global class BatchSample implements Database.Batchable<SObject>{
 
      global void finish(Database.BatchableContext bc){
 
-       System.debug('Batch class executed');
+       System.debug('Batch class executed successfully');
 
      }
 }
